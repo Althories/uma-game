@@ -1,0 +1,13 @@
+2. Make character sprite
+3. Make placeholder tile sprites for a tilemap
+5. Fine tune dialogue manager for portraits
+6. Customize text box to be UMAFIED
+7. Add or make UMA music
+
+
+
+
+
+
+notes:
+	32x32 asset size basis

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=4 uid="uid://but06nlj4oke1"]
+
+[ext_resource type="Texture2D" uid="uid://b4kjx62x5pto4" path="res://Assets/Tiles/uma-dev-tile.png" id="1_u4c4u"]
+[ext_resource type="PackedScene" uid="uid://byvkoptibc67" path="res://Scenes/Character/player.tscn" id="2_u4c4u"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u4c4u"]
+texture = ExtResource("1_u4c4u")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ik5fm"]
+tile_size = Vector2i(32, 32)
+sources/1 = SubResource("TileSetAtlasSource_u4c4u")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u4c4u"]
+
+[node name="Main" type="Node2D"]
+
+[node name="World" type="Node2D" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="World"]
+position = Vector2(576, 432)
+tile_map_data = PackedByteArray("AAAAAAIAAQAAAAAAAAABAAIAAQAAAAAAAAD//wIAAQAAAAAAAAD+/wIAAQAAAAAAAAD9/wIAAQAAAAAAAAACAAIAAQAAAAAAAAADAAIAAQAAAAAAAAD8/wIAAQAAAAAAAAD7/wIAAQAAAAAAAAAEAAIAAQAAAAAAAAAFAAIAAQAAAAAAAAD6/wIAAQAAAAAAAAD5/wIAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_ik5fm")
+
+[node name="Player" parent="World" instance=ExtResource("2_u4c4u")]
+position = Vector2(568, 416)
+
+[node name="Ground" type="StaticBody2D" parent="World"]
+
+[node name="WorldCollisionShape" type="CollisionShape2D" parent="World/Ground"]
+position = Vector2(568, 496)
+shape = SubResource("WorldBoundaryShape2D_u4c4u")
