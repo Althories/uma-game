@@ -51,6 +51,7 @@ var mutation_cooldown: Timer = Timer.new()
 ## The menu of responses
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
+#The speaking character's portrait
 @onready var portrait: TextureRect = %Portrait
 
 func _ready() -> void:

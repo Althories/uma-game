@@ -4,6 +4,9 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("interact"):
+		DialogueManager.show_dialogue_balloon(load("res://Dialogue/test_dialogue.dialogue"), "start")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
