@@ -3,11 +3,18 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
+var can_interact = true
+
 @onready var player_sprite: Sprite2D = $PlayerSprite
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("interact") and can_interact == true:
 		DialogueManager.show_dialogue_balloon(load("res://Dialogue/test_dialogue.dialogue"), "start")
+		Globalvars.dialogue_ended = false
+		can_interact = false
+	elif Globalvars.dialogue_ended == true:
+		can_interact = true
+		
 		
 	#Faces Player Sprite in appropriate direction based on movement direction
 	if Input.is_action_just_pressed("move_left"):

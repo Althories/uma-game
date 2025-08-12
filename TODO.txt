@@ -1,15 +1,13 @@
-1. Make character sprite
 6. Customize text box to be UMAFIED
 7. Add or make UMA music
 1. Make basic mayano sprite
+1. make basic mayano portrait
 1. Make basic Vodka Portrait
 2. Make basic Daiwa Portrait
 
-1. Make yap sounds work in general
 1. Make yap sounds as a tag for dialogue lines or whatever
 - Make the on dialogue spoken thing use tags
 - it can search for tags in the dialogue line to determine 1. soundfile and 2. pitch
-2. Figure out a good system for non-looping dialogue
 
 notes:
 	32x32 asset size basis

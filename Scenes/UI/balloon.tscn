@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bcrb1tnm1jh57"]
+[gd_scene load_steps=10 format=3 uid="uid://bcrb1tnm1jh57"]
 
 [ext_resource type="Script" uid="uid://bbll7gkcx0hcr" path="res://Scripts/balloon.gd" id="1_s0ote"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_4sluf"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_3ud7b"]
+[ext_resource type="AudioStream" uid="uid://u56vj6vvua2l" path="res://Assets/Audio/SFX/beep.wav" id="4_4sluf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
 bg_color = Color(0, 0, 0, 1)
@@ -150,7 +151,13 @@ text = "Response example"
 
 [node name="textbox_talk_sound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
+stream = ExtResource("4_4sluf")
+volume_db = -7.8
+pitch_scale = 0.7
+bus = &"Sound_Effects"
 
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
+[connection signal="finished_typing" from="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_finished_typing"]
 [connection signal="spoke" from="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]
 [connection signal="response_selected" from="Balloon/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]

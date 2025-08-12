@@ -189,4 +189,8 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 #textbox yap sounds
 func _on_dialogue_label_spoke(letter: String, _letter_index: int, _speed: float) -> void:
-	textbox_talk_sound.play()
+	if not letter in [".", " "]:
+		textbox_talk_sound.play()
+
+func _on_tree_exited() -> void:
+	Globalvars.dialogue_ended = true
