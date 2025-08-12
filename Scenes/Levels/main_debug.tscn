@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=4 uid="uid://but06nlj4oke1"]
+[gd_scene load_steps=11 format=4 uid="uid://but06nlj4oke1"]
 
+[ext_resource type="Script" uid="uid://fv2m2hv44u3k" path="res://Scripts/top_scene_node.gd" id="1_6nkaj"]
 [ext_resource type="Texture2D" uid="uid://b4kjx62x5pto4" path="res://Assets/Tiles/uma-dev-tile.png" id="1_u4c4u"]
 [ext_resource type="PackedScene" uid="uid://rao3pv3hk4w6" path="res://Scenes/Character/NPC/DaiwaNPC.tscn" id="2_donp2"]
 [ext_resource type="PackedScene" uid="uid://byvkoptibc67" path="res://Scenes/Character/player.tscn" id="2_u4c4u"]
@@ -44,6 +45,7 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_donp2")
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_6nkaj")
 
 [node name="World" type="Node2D" parent="."]
 

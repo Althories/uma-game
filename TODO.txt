@@ -9,11 +9,15 @@ VISUAL TODO
 1. Give Daiwa an idle anim
 
 DIALOGUE TODO
-2. Add (if already talked to) thing to Daiwa script
+1. Add speakable animated sprite indicator (animate and show when in range, hide when in dialogue)
 1. Make Daiwa Sprite turn to Vodka depending on the interact direction
 1. Make yap sounds as a tag for dialogue lines or whatever
 - Make the on dialogue spoken thing use tags
 - it can search for tags in the dialogue line to determine 1. soundfile and 2. pitch
+- find function/button to prematurely advance to next dialogue line
+
+SCRIPT TODO
+- 
 
 notes:
 	32x32 asset size basis

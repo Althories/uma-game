@@ -1,10 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://rao3pv3hk4w6"]
+[gd_scene load_steps=8 format=3 uid="uid://rao3pv3hk4w6"]
 
 [ext_resource type="Texture2D" uid="uid://cfqw0n2cqwk6i" path="res://Assets/Characters/CharSprites/uma-daiwa-sprite.png" id="1_r83tc"]
 [ext_resource type="Script" uid="uid://rm6iq3qnedku" path="res://Scripts/Characters/NPC/daiwa_npc.gd" id="2_r4cm6"]
+[ext_resource type="Texture2D" uid="uid://bdxv87to075ml" path="res://Assets/UI/interact-ui.png" id="3_up404"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r83tc"]
 size = Vector2(70, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_468ky"]
+atlas = ExtResource("3_up404")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd0df"]
+atlas = ExtResource("3_up404")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j0b6r"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_468ky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd0df")
+}],
+"loop": true,
+"name": &"interact",
+"speed": 5.0
+}]
 
 [node name="Daiwa" type="Sprite2D"]
 texture = ExtResource("1_r83tc")
@@ -15,6 +43,13 @@ script = ExtResource("2_r4cm6")
 [node name="DaiwaCollision" type="CollisionShape2D" parent="DaiwaArea"]
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_r83tc")
+
+[node name="Interact_Key_UI" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -30)
+sprite_frames = SubResource("SpriteFrames_j0b6r")
+animation = &"interact"
+speed_scale = 0.5
 
 [connection signal="body_entered" from="DaiwaArea" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="DaiwaArea" to="." method="_on_body_exited"]

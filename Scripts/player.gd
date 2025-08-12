@@ -10,9 +10,9 @@ var can_move = true			#for player input movement physics process
 func _process(_delta: float) -> void:
 	#Faces Player Sprite in appropriate direction based on movement direction
 	if Globalvars.dialogue_ended:
-		if Input.is_action_just_pressed("move_left"):
+		if Input.is_action_pressed("move_left"):
 			player_sprite.flip_h = true
-		elif Input.is_action_just_pressed("move_right"):
+		if Input.is_action_pressed("move_right"):
 			player_sprite.flip_h = false
 		
 func _physics_process(delta: float) -> void:

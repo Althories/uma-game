@@ -1,13 +1,17 @@
 ~ start
-Daiwa: Vodka! Where have you been?
-Vodka: Oh, Daiwa. I've been...[wait=.005] Um...
-- I've been training late!
-	Daiwa: Really? I didn't know you started evening runs. I hope your trainer's okay with that.
+Daiwa Scarlet: Vodka! Where have you been?
+Vodka: Oh, Scarlet. I've been... Uh...
+- I've been going on midnight runs!
+	Daiwa Scarlet: Really? I didn't know. I hope your trainer's okay with that.
 - I was studying all night!
-	Daiwa: Yeah, fat chance! You'd fall asleep before reading the first page!
-Daiwa: Anyways, you're late for training! Go find your trainer so we can get started.
-Vodka: Fiiine. Wait,[wait=.2] remind me what we're doing?
-Daiwa: Hmph! Maybe if you got more sleep, you'd remember we agreed to do partner training today.
+	Daiwa Scarlet: Yeah, fat chance! You'd fall asleep in minutes!
+Daiwa Scarlet: Anyways, you're late for our set! Go find your trainer so we can get started.
+Vodka: Fiiine. Wait,[wait=.4] "our"[wait=.3] training?
+Daiwa Scarlet: Hmph! Maybe if you got more sleep, you'd remember we agreed to partner up today.
 Vodka: Crap. You're right.
-Daiwa: YUP! Now stop talking and start moving!!
+Daiwa Scarlet: YUP! Now stop talking and start moving!!
+=> END
+
+~ loop
+Daiwa Scarlet: Didn't I already tell you? Go find your trainer so we can get started!
 => END
