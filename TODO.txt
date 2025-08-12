@@ -1,10 +1,16 @@
+VISUAL TODO
 6. Customize text box to be UMAFIED
 7. Add or make UMA music
 1. Make basic mayano sprite
 1. make basic mayano portrait
 1. Make basic Vodka Portrait
 2. Make basic Daiwa Portrait
+1. Animate Vodka walk
+1. Give Daiwa an idle anim
 
+DIALOGUE TODO
+2. Add (if already talked to) thing to Daiwa script
+1. Make Daiwa Sprite turn to Vodka depending on the interact direction
 1. Make yap sounds as a tag for dialogue lines or whatever
 - Make the on dialogue spoken thing use tags
 - it can search for tags in the dialogue line to determine 1. soundfile and 2. pitch
@@ -15,3 +21,4 @@ notes:
 		2. Player
 		1. NPC
 		0. Background
+	You can check uma relationships here https://umamusu.wiki/Vodka (relationships section for every char)

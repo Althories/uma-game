@@ -14,6 +14,10 @@ config/name="Uma-Game"
 run/main_scene="uid://but06nlj4oke1"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
+[audio]
+
+buses/default_bus_layout="uid://b8ja88jm7m6ap"
+
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
@@ -25,8 +29,6 @@ runtime/balloon_path="uid://bcrb1tnm1jh57"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
 window/stretch/scale_mode="integer"
 
 [editor_plugins]
@@ -82,7 +84,7 @@ interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogue/test_dialogue.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogue/test_dialogue.dialogue", "res://Dialogue/daiwascarlet.dialogue")
 
 [rendering]
 

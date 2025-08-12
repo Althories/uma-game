@@ -1,0 +1,13 @@
+~ start
+Daiwa: Vodka! Where have you been?
+Vodka: Oh, Daiwa. I've been...[wait=.005] Um...
+- I've been training late!
+	Daiwa: Really? I didn't know you started evening runs. I hope your trainer's okay with that.
+- I was studying all night!
+	Daiwa: Yeah, fat chance! You'd fall asleep before reading the first page!
+Daiwa: Anyways, you're late for training! Go find your trainer so we can get started.
+Vodka: Fiiine. Wait,[wait=.2] remind me what we're doing?
+Daiwa: Hmph! Maybe if you got more sleep, you'd remember we agreed to do partner training today.
+Vodka: Crap. You're right.
+Daiwa: YUP! Now stop talking and start moving!!
+=> END

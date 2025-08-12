@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dhqmhq47bskex"
+path="res://.godot/imported/daiwascarlet.dialogue-182510f54c4970866ebb8a2f0c65cd51.tres"
+
+[deps]
+
+source_file="res://Dialogue/daiwascarlet.dialogue"
+dest_files=["res://.godot/imported/daiwascarlet.dialogue-182510f54c4970866ebb8a2f0c65cd51.tres"]
+
+[params]
+
+defaults=true
