@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://rao3pv3hk4w6"]
+
+[ext_resource type="Texture2D" uid="uid://cfqw0n2cqwk6i" path="res://Assets/Characters/CharSprites/uma-daiwa-sprite.png" id="1_r83tc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r83tc"]
+size = Vector2(50, 20)
+
+[node name="Daiwa" type="Sprite2D"]
+texture = ExtResource("1_r83tc")
+
+[node name="DaiwaArea" type="Area2D" parent="."]
+
+[node name="DaiwaCollision" type="CollisionShape2D" parent="DaiwaArea"]
+visible = false
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_r83tc")

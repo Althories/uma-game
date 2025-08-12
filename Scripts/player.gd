@@ -1,12 +1,21 @@
 extends CharacterBody2D
 
-
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
-func _process(delta: float) -> void:
+@onready var player_sprite: Sprite2D = $PlayerSprite
+
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact"):
 		DialogueManager.show_dialogue_balloon(load("res://Dialogue/test_dialogue.dialogue"), "start")
+		
+	#Faces Player Sprite in appropriate direction based on movement direction
+	if Input.is_action_just_pressed("move_left"):
+		player_sprite.flip_h = true
+	elif Input.is_action_just_pressed("move_right"):
+		player_sprite.flip_h = false
+		
+		
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

@@ -54,6 +54,9 @@ var mutation_cooldown: Timer = Timer.new()
 #The speaking character's portrait
 @onready var portrait: TextureRect = %Portrait
 
+#The speaking character's voice
+@onready var textbox_talk_sound: AudioStreamPlayer = %textbox_talk_sound
+
 func _ready() -> void:
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
@@ -100,8 +103,8 @@ func apply_dialogue_line() -> void:
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
 	
-	#look for character portrait
-	var portrait_path: String = "res://Assets/Characters/CharPortraits/%s/portrait.png" % dialogue_line.character.to_lower()
+	#look for character portrait - Path should be the folder where all the CharPortraits are
+	var portrait_path: String = "res://Assets/Characters/CharPortraits/%s.png" % dialogue_line.get_tag_value("Portrait")
 	if ResourceLoader.exists(portrait_path):
 		portrait.texture = load(portrait_path)
 	else:
@@ -183,3 +186,7 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 #endregion
+
+#textbox yap sounds
+func _on_dialogue_label_spoke(letter: String, _letter_index: int, _speed: float) -> void:
+	textbox_talk_sound.play()
