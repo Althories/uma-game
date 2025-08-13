@@ -109,6 +109,13 @@ func apply_dialogue_line() -> void:
 		portrait.texture = load(portrait_path)
 	else:
 		portrait.texture = null
+		
+	#look for character voice
+	var voice_path: String = "res://Assets/Audio/SFX/%s.wav" % dialogue_line.get_tag_value("Voice")
+	if ResourceLoader.exists(voice_path):
+		textbox_talk_sound.stream = load(voice_path)
+	else:
+		textbox_talk_sound.stream = load("res://Assets/Audio/SFX/beep.wav")	#fallback sfx
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
