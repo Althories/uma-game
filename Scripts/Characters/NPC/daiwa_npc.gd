@@ -38,3 +38,9 @@ func _on_body_entered(_body: Node2D) -> void:
 
 func _on_body_exited(_body: Node2D) -> void:
 	player_in_range = false
+
+func _on_daiwa_enter_body_entered(body: Node2D) -> void:
+	flip_h = true
+
+func _on_daiwa_exit_body_exited(body: Node2D) -> void:
+	flip_h = false

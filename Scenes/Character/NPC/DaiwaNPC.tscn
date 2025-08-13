@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://rao3pv3hk4w6"]
+[gd_scene load_steps=10 format=3 uid="uid://rao3pv3hk4w6"]
 
 [ext_resource type="Texture2D" uid="uid://cfqw0n2cqwk6i" path="res://Assets/Characters/CharSprites/uma-daiwa-sprite.png" id="1_r83tc"]
 [ext_resource type="Script" uid="uid://rm6iq3qnedku" path="res://Scripts/Characters/NPC/daiwa_npc.gd" id="2_r4cm6"]
@@ -34,6 +34,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_up404"]
+size = Vector2(35, 67)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_468ky"]
+size = Vector2(90, 116)
+
 [node name="Daiwa" type="Sprite2D"]
 texture = ExtResource("1_r83tc")
 script = ExtResource("2_r4cm6")
@@ -41,6 +47,7 @@ script = ExtResource("2_r4cm6")
 [node name="DaiwaArea" type="Area2D" parent="."]
 
 [node name="DaiwaCollision" type="CollisionShape2D" parent="DaiwaArea"]
+visible = false
 position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_r83tc")
 
@@ -51,5 +58,23 @@ sprite_frames = SubResource("SpriteFrames_j0b6r")
 animation = &"interact"
 speed_scale = 0.5
 
+[node name="SpriteDirection" type="Node2D" parent="."]
+
+[node name="DaiwaEnter" type="Area2D" parent="SpriteDirection"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteDirection/DaiwaEnter"]
+position = Vector2(-17.5, -7.5)
+shape = SubResource("RectangleShape2D_up404")
+
+[node name="DaiwaExit" type="Area2D" parent="SpriteDirection"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpriteDirection/DaiwaExit"]
+position = Vector2(-45, -32)
+shape = SubResource("RectangleShape2D_468ky")
+
 [connection signal="body_entered" from="DaiwaArea" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="DaiwaArea" to="." method="_on_body_exited"]
+[connection signal="body_entered" from="SpriteDirection/DaiwaEnter" to="." method="_on_daiwa_enter_body_entered"]
+[connection signal="body_exited" from="SpriteDirection/DaiwaExit" to="." method="_on_daiwa_exit_body_exited"]
