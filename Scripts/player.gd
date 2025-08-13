@@ -16,12 +16,11 @@ func _process(_delta: float) -> void:
 			player_sprite.flip_h = false
 		
 func _physics_process(delta: float) -> void:
-	#Player movement block - if player is not in dialogue
-	if can_move:
-		# Add the gravity.
-		if not is_on_floor():
-			velocity += get_gravity() * delta
-
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+		
+	if can_move:	#Player movement block - if player is not in dialogue
 		# Handle jump.
 		if Input.is_action_just_pressed("move_jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
@@ -37,4 +36,4 @@ func _physics_process(delta: float) -> void:
 	if Globalvars.dialogue_ended:
 		can_move = true
 
-		move_and_slide()
+	move_and_slide()

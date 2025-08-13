@@ -6,17 +6,15 @@ VISUAL TODO
 1. Make basic Vodka Portrait
 2. Make basic Daiwa Portrait
 1. Animate Vodka walk
-1. Give Daiwa an idle anim
 
 DIALOGUE TODO
-1. Make Daiwa Sprite turn to Vodka depending on the interact direction (sep collision boxes)
 1. Make yap sounds as a tag for dialogue lines or whatever
 - Make the on dialogue spoken thing use tags
 - it can search for tags in the dialogue line to determine 1. soundfile and 2. pitch
 - find function/button to prematurely advance to next dialogue line
 
 SCRIPT TODO
-- 
+-
 
 notes:
 	32x32 asset size basis

@@ -1,8 +1,136 @@
-[gd_scene load_steps=10 format=3 uid="uid://rao3pv3hk4w6"]
+[gd_scene load_steps=26 format=3 uid="uid://rao3pv3hk4w6"]
 
-[ext_resource type="Texture2D" uid="uid://cfqw0n2cqwk6i" path="res://Assets/Characters/CharSprites/uma-daiwa-sprite.png" id="1_r83tc"]
+[ext_resource type="Texture2D" uid="uid://2i24lru72pcx" path="res://Assets/Characters/CharSprites/uma-daiwa-spritesheet.png" id="1_up404"]
 [ext_resource type="Script" uid="uid://rm6iq3qnedku" path="res://Scripts/Characters/NPC/daiwa_npc.gd" id="2_r4cm6"]
 [ext_resource type="Texture2D" uid="uid://bdxv87to075ml" path="res://Assets/UI/interact-ui.png" id="3_up404"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0b6r"]
+atlas = ExtResource("1_up404")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud0lq"]
+atlas = ExtResource("1_up404")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anrk0"]
+atlas = ExtResource("1_up404")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k77iw"]
+atlas = ExtResource("1_up404")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqidd"]
+atlas = ExtResource("1_up404")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6ews"]
+atlas = ExtResource("1_up404")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgnxy"]
+atlas = ExtResource("1_up404")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g42oj"]
+atlas = ExtResource("1_up404")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70mhy"]
+atlas = ExtResource("1_up404")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bidgs"]
+atlas = ExtResource("1_up404")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up404"]
+atlas = ExtResource("1_up404")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogvy7"]
+atlas = ExtResource("1_up404")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho6wq"]
+atlas = ExtResource("1_up404")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o43o"]
+atlas = ExtResource("1_up404")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x2ck"]
+atlas = ExtResource("1_up404")
+region = Rect2(256, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r4cm6"]
+animations = [{
+"frames": [{
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_j0b6r")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_ud0lq")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_anrk0")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_k77iw")
+}],
+"loop": false,
+"name": &"blink",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqidd")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_g6ews")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_qgnxy")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_g42oj")
+}, {
+"duration": 4.0,
+"texture": SubResource("AtlasTexture_70mhy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bidgs")
+}],
+"loop": false,
+"name": &"small_crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_up404")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ogvy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ho6wq")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_8o43o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1x2ck")
+}],
+"loop": false,
+"name": &"sway_arms",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r83tc"]
 size = Vector2(70, 20)
@@ -40,8 +168,11 @@ size = Vector2(35, 67)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_468ky"]
 size = Vector2(90, 116)
 
-[node name="Daiwa" type="Sprite2D"]
-texture = ExtResource("1_r83tc")
+[node name="Daiwa" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_r4cm6")
+animation = &"small_crouch"
+frame = 1
+frame_progress = 0.825516
 script = ExtResource("2_r4cm6")
 
 [node name="DaiwaArea" type="Area2D" parent="."]
@@ -74,7 +205,14 @@ visible = false
 position = Vector2(-45, -32)
 shape = SubResource("RectangleShape2D_468ky")
 
+[node name="AnimationCooldownTimer" type="Timer" parent="."]
+
+[node name="AnimationBlinkTimer" type="Timer" parent="."]
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
 [connection signal="body_entered" from="DaiwaArea" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="DaiwaArea" to="." method="_on_body_exited"]
 [connection signal="body_entered" from="SpriteDirection/DaiwaEnter" to="." method="_on_daiwa_enter_body_entered"]
 [connection signal="body_exited" from="SpriteDirection/DaiwaExit" to="." method="_on_daiwa_exit_body_exited"]
+[connection signal="timeout" from="AnimationCooldownTimer" to="." method="_on_animation_cooldown_timer_timeout"]
+[connection signal="timeout" from="AnimationBlinkTimer" to="." method="_on_animation_blink_timer_timeout"]
