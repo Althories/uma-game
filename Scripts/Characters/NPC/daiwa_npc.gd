@@ -24,7 +24,6 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	#Dialogue interaction handling ----------------------
-	print(animation_blink_timer.wait_time)
 	if Input.is_action_just_pressed("interact") and player_in_range and can_interact:
 		if not talked_yet:
 			DialogueManager.show_dialogue_balloon(load("res://Dialogue/daiwascarlet.dialogue"), "start")

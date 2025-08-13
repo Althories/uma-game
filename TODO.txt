@@ -11,7 +11,6 @@ DIALOGUE TODO
 1. Make yap sounds as a tag for dialogue lines or whatever
 - Make the on dialogue spoken thing use tags
 - it can search for tags in the dialogue line to determine 1. soundfile and 2. pitch
-- find function/button to prematurely advance to next dialogue line
 
 SCRIPT TODO
 -
