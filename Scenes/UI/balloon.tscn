@@ -13,7 +13,6 @@ border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.329412, 0.329412, 0.329412, 1)
-corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
@@ -54,7 +53,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="Theme" id="Theme_qq3yp"]
-default_font_size = 20
+default_font_size = 22
 Button/styles/disabled = SubResource("StyleBoxFlat_spyqn")
 Button/styles/focus = SubResource("StyleBoxFlat_ri4m3")
 Button/styles/hover = SubResource("StyleBoxFlat_e0njw")
@@ -76,7 +75,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(1822, -0.25, 0, 0.25, 0, 1822, -0.25, 0, 0.25, 0, 1822, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(1460, -0.25, 0, 0.25, 0, 1460, -0.25, 0, 0.25, 0, 1460, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.5, 1)
 }
 tracks/1/type = "bezier"
@@ -142,7 +141,9 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 362.0
 offset_top = -219.0
+offset_right = -358.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -204,15 +205,16 @@ script = ExtResource("3_3ud7b")
 response_template = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 text = "Response example"
 
 [node name="textbox_progress_ui" type="TextureRect" parent="Balloon"]
 layout_mode = 0
-offset_left = 1822.0
-offset_top = 994.958
-offset_right = 1886.0
-offset_bottom = 1058.96
+offset_left = 1460.0
+offset_top = 982.357
+offset_right = 1524.0
+offset_bottom = 1046.36
 texture = ExtResource("4_3ud7b")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/textbox_progress_ui"]

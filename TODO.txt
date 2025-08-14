@@ -7,10 +7,10 @@ VISUAL TODO
 2. Make basic Daiwa Portrait
 1. Animate Vodka walk
 1. Add a background bush and a background streetlight
+1. Edit Daiwa's crouch sprite anim so the pigtails bounce a little
 
 DIALOGUE TODO
-- Test dialogue manager capabilities by calling a script function in text
-- Add sprite textbox progress indicator
+- Test dialogue manager capabilities by calling a script function in text (ex. print function)
 
 SCRIPT TODO
 -
