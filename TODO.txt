@@ -5,12 +5,11 @@ VISUAL TODO
 1. make basic mayano portrait
 1. Make basic Vodka Portrait
 2. Make basic Daiwa Portrait
-1. Animate Vodka walk
-1. Add a background bush and a background streetlight
-1. Edit Daiwa's crouch sprite anim so the pigtails bounce a little
+1. Animate Vodka walk (scary)
+1. Add a background bush and a background streetlight (aseprite)
 
 DIALOGUE TODO
-- Test dialogue manager capabilities by calling a script function in text (ex. print function)
+- Make Daiwa do a greet animation in the dialogue script to prove its capabilities
 
 SCRIPT TODO
 -

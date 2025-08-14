@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://rao3pv3hk4w6"]
+[gd_scene load_steps=28 format=3 uid="uid://rao3pv3hk4w6"]
 
 [ext_resource type="Texture2D" uid="uid://2i24lru72pcx" path="res://Assets/Characters/CharSprites/uma-daiwa-spritesheet.png" id="1_up404"]
 [ext_resource type="Script" uid="uid://rm6iq3qnedku" path="res://Scripts/Characters/NPC/daiwa_npc.gd" id="2_r4cm6"]
@@ -42,7 +42,15 @@ region = Rect2(192, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bidgs"]
 atlas = ExtResource("1_up404")
-region = Rect2(0, 128, 64, 64)
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqqfw"]
+atlas = ExtResource("1_up404")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8s4kf"]
+atlas = ExtResource("1_up404")
+region = Rect2(384, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_up404"]
 atlas = ExtResource("1_up404")
@@ -95,17 +103,23 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_g6ews")
 }, {
-"duration": 4.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_qgnxy")
 }, {
-"duration": 2.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_g42oj")
 }, {
-"duration": 4.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_70mhy")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bidgs")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_rqqfw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8s4kf")
 }],
 "loop": false,
 "name": &"small_crouch",
@@ -171,8 +185,8 @@ size = Vector2(90, 116)
 [node name="Daiwa" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_r4cm6")
 animation = &"small_crouch"
-frame = 1
-frame_progress = 0.825516
+frame = 6
+frame_progress = 0.961161
 script = ExtResource("2_r4cm6")
 
 [node name="DaiwaArea" type="Area2D" parent="."]
