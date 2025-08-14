@@ -1,4 +1,5 @@
 ~ start
+do! play("greet")
 Daiwa Scarlet: Vodka! Where have you been? [#Portrait=TestPortrait,Voice=beep]
 Vodka: Oh, Scarlet. I've been... Uh...	[#Voice=beep]
 - I've been going on midnight runs!

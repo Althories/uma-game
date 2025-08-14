@@ -26,7 +26,7 @@ func _process(_delta: float) -> void:
 	#Dialogue interaction handling ----------------------
 	if Input.is_action_just_pressed("interact") and player_in_range and can_interact:
 		if not talked_yet:
-			DialogueManager.show_dialogue_balloon(load("res://Dialogue/daiwascarlet.dialogue"), "start")
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/daiwascarlet.dialogue"), "start", [self])
 			talked_yet = true
 		else:
 			DialogueManager.show_dialogue_balloon(load("res://Dialogue/daiwascarlet.dialogue"), "loop")

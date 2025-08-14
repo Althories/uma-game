@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
-	if can_move:	#Player movement block - if player is not in dialogue
+	if can_move:	#Player movement block - if player is not in dialogue 
 		# Handle jump.
 		if Input.is_action_just_pressed("move_jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
@@ -31,6 +31,8 @@ func _physics_process(delta: float) -> void:
 			velocity.x = direction * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
+	else:
+		velocity.x = 0	#Prevents movement continuing on initiating dialogue
 	
 	#put at bottom to prevent accidental jump upon dialogue end with SPACE
 	if Globalvars.dialogue_ended:

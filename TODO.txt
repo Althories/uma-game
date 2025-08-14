@@ -10,6 +10,7 @@ VISUAL TODO
 
 DIALOGUE TODO
 - Make Daiwa do a greet animation in the dialogue script to prove its capabilities
+(maybe just like a short yellow exclamation mark above her head)
 
 SCRIPT TODO
 -
