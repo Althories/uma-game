@@ -30,7 +30,7 @@ func _process(_delta: float) -> void:
 			DialogueManager.show_dialogue_balloon(load("res://Dialogue/daiwascarlet.dialogue"), "start", [self])
 			talked_yet = true
 		else:
-			DialogueManager.show_dialogue_balloon(load("res://Dialogue/daiwascarlet.dialogue"), "loop")
+			DialogueManager.show_dialogue_balloon(load("res://Dialogue/daiwascarlet.dialogue"), "loop", [self])
 		Globalvars.dialogue_ended = false
 		can_interact = false
 		player.can_move = false
