@@ -1,9 +1,53 @@
-[gd_scene load_steps=5 format=3 uid="uid://byvkoptibc67"]
+[gd_scene load_steps=10 format=3 uid="uid://byvkoptibc67"]
 
 [ext_resource type="Script" uid="uid://c5su0oagr8vhx" path="res://Scripts/player.gd" id="1_bk5kl"]
 [ext_resource type="Texture2D" uid="uid://bd233kr8l11ii" path="res://Assets/Characters/CharSprites/uma-vodka-sprite.png" id="2_ojo44"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xfcej"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojo44"]
+atlas = ExtResource("2_ojo44")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_801yk"]
+atlas = ExtResource("2_ojo44")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0tos"]
+atlas = ExtResource("2_ojo44")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw006"]
+atlas = ExtResource("2_ojo44")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vw006"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojo44")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_801yk")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_l0tos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojo44")
+}],
+"loop": false,
+"name": &"blink",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw006")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="BoxMesh" id="BoxMesh_b0g5v"]
 
@@ -24,15 +68,20 @@ drag_bottom_margin = 0.1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_xfcej")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-
-[node name="PlayerSprite" type="Sprite2D" parent="."]
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -16)
-texture = ExtResource("2_ojo44")
+sprite_frames = SubResource("SpriteFrames_vw006")
+animation = &"blink"
+frame = 3
+frame_progress = 1.0
 
 [node name="Placeholder" type="MeshInstance2D" parent="."]
 visible = false
 modulate = Color(0.653579, 0.134991, 0.819518, 1)
 scale = Vector2(20, 20)
 mesh = SubResource("BoxMesh_b0g5v")
+
+[node name="AnimationBlinkTimer" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="timeout" from="AnimationBlinkTimer" to="." method="_on_animation_blink_timer_timeout"]

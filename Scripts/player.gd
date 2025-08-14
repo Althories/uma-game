@@ -3,9 +3,11 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
-var can_move = true			#for player input movement physics process
+@onready var player_sprite: AnimatedSprite2D = $PlayerSprite
+@onready var animation_blink_timer: Timer = $AnimationBlinkTimer
 
-@onready var player_sprite: Sprite2D = $PlayerSprite
+var can_move = true			#for player input movement physics process
+var can_blink = true	#For blink idle animation
 
 func _process(_delta: float) -> void:
 	#Faces Player Sprite in appropriate direction based on movement direction
@@ -14,6 +16,12 @@ func _process(_delta: float) -> void:
 			player_sprite.flip_h = true
 		if Input.is_action_pressed("move_right"):
 			player_sprite.flip_h = false
+			
+	#animation
+	if can_blink:
+		player_sprite.play("blink")
+		animation_blink_timer.start()
+		can_blink = false
 		
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -39,3 +47,8 @@ func _physics_process(delta: float) -> void:
 		can_move = true
 
 	move_and_slide()
+
+#Signals
+func _on_animation_blink_timer_timeout() -> void:
+	animation_blink_timer.wait_time = randf_range(3.5, 5)	#change the blink timer every time
+	can_blink = true

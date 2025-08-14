@@ -240,9 +240,7 @@ size = Vector2(90, 116)
 [node name="Daiwa" type="AnimatedSprite2D"]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_r4cm6")
-animation = &"greet"
-frame = 6
-frame_progress = 1.0
+animation = &"blink"
 script = ExtResource("2_r4cm6")
 
 [node name="DaiwaArea" type="Area2D" parent="."]
