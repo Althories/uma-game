@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bcrb1tnm1jh57"]
+[gd_scene load_steps=14 format=3 uid="uid://bcrb1tnm1jh57"]
 
 [ext_resource type="Script" uid="uid://bbll7gkcx0hcr" path="res://Scripts/balloon.gd" id="1_s0ote"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_4sluf"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_3ud7b"]
+[ext_resource type="Texture2D" uid="uid://bblooehvhtmtj" path="res://Assets/UI/textbox-progress-ui.png" id="4_3ud7b"]
 [ext_resource type="AudioStream" uid="uid://kgnykm0sjfep" path="res://Assets/Audio/SFX/yap2.wav" id="4_4sluf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
@@ -63,6 +64,63 @@ MarginContainer/constants/margin_left = 30
 MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qkmqt")
+
+[sub_resource type="Animation" id="Animation_3ud7b"]
+resource_name = "new_animation"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1822, -0.25, 0, 0.25, 0, 1822, -0.25, 0, 0.25, 0, 1822, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(980, -0.25, 0, 0.25, 0, 1000, -0.25, 0, 0.25, 0, 980, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="Animation" id="Animation_xa8fc"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1827, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1002, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8smuo"]
+_data = {
+&"RESET": SubResource("Animation_xa8fc"),
+&"new_animation": SubResource("Animation_3ud7b")
+}
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
@@ -148,6 +206,20 @@ response_template = NodePath("ResponseExample")
 [node name="ResponseExample" type="Button" parent="Balloon/ResponsesMenu"]
 layout_mode = 2
 text = "Response example"
+
+[node name="textbox_progress_ui" type="TextureRect" parent="Balloon"]
+layout_mode = 0
+offset_left = 1822.0
+offset_top = 994.958
+offset_right = 1886.0
+offset_bottom = 1058.96
+texture = ExtResource("4_3ud7b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/textbox_progress_ui"]
+libraries = {
+&"": SubResource("AnimationLibrary_8smuo")
+}
+autoplay = "new_animation"
 
 [node name="textbox_talk_sound" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true

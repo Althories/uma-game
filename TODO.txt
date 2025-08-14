@@ -1,16 +1,16 @@
 VISUAL TODO
 6. Customize text box to be UMAFIED
-7. Add or make UMA music
+1. Replace placeholder music with uma music
 1. Make basic mayano sprite
 1. make basic mayano portrait
 1. Make basic Vodka Portrait
 2. Make basic Daiwa Portrait
 1. Animate Vodka walk
+1. Add a background bush and a background streetlight
 
 DIALOGUE TODO
-1. Make yap sounds as a tag for dialogue lines or whatever
-- Make the on dialogue spoken thing use tags
-- it can search for tags in the dialogue line to determine 1. soundfile and 2. pitch
+- Test dialogue manager capabilities by calling a script function in text
+- Add sprite textbox progress indicator
 
 SCRIPT TODO
 -

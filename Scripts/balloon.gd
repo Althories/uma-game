@@ -7,6 +7,27 @@ extends CanvasLayer
 ## The action to use to skip typing the dialogue
 @export var skip_action: StringName = &"skip_dialogue"
 
+## The base balloon anchor
+@onready var balloon: Control = %Balloon
+
+## The label showing the name of the currently speaking character
+@onready var character_label: RichTextLabel = %CharacterLabel
+
+## The label showing the currently spoken dialogue
+@onready var dialogue_label: DialogueLabel = %DialogueLabel
+
+## The menu of responses
+@onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
+
+#The speaking character's portrait
+@onready var portrait: TextureRect = %Portrait
+
+#The speaking character's voice
+@onready var textbox_talk_sound: AudioStreamPlayer = %textbox_talk_sound
+
+#The textbox text progression arrow
+@onready var textbox_progress_ui: TextureRect = $Balloon/textbox_progress_ui
+
 ## The dialogue resource
 var resource: DialogueResource
 
@@ -14,7 +35,13 @@ var resource: DialogueResource
 var temporary_game_states: Array = []
 
 ## See if we are waiting for the player
-var is_waiting_for_input: bool = false
+var is_waiting_for_input: bool = false:
+	set(value):
+		is_waiting_for_input = value
+		textbox_progress_ui.visible = value
+	get:
+		return is_waiting_for_input
+
 
 ## See if we are running a long mutation and should hide the balloon
 var will_hide_balloon: bool = false
@@ -39,26 +66,9 @@ var dialogue_line: DialogueLine:
 ## A cooldown timer for delaying the balloon hide when encountering a mutation.
 var mutation_cooldown: Timer = Timer.new()
 
-## The base balloon anchor
-@onready var balloon: Control = %Balloon
-
-## The label showing the name of the currently speaking character
-@onready var character_label: RichTextLabel = %CharacterLabel
-
-## The label showing the currently spoken dialogue
-@onready var dialogue_label: DialogueLabel = %DialogueLabel
-
-## The menu of responses
-@onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
-
-#The speaking character's portrait
-@onready var portrait: TextureRect = %Portrait
-
-#The speaking character's voice
-@onready var textbox_talk_sound: AudioStreamPlayer = %textbox_talk_sound
-
 func _ready() -> void:
 	balloon.hide()
+	textbox_progress_ui.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
 	# If the responses menu doesn't have a next action set, use this one
