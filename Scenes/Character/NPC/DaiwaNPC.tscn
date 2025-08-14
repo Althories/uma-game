@@ -1,8 +1,9 @@
-[gd_scene load_steps=35 format=3 uid="uid://rao3pv3hk4w6"]
+[gd_scene load_steps=36 format=3 uid="uid://rao3pv3hk4w6"]
 
 [ext_resource type="Texture2D" uid="uid://2i24lru72pcx" path="res://Assets/Characters/CharSprites/uma-daiwa-spritesheet.png" id="1_up404"]
 [ext_resource type="Script" uid="uid://rm6iq3qnedku" path="res://Scripts/Characters/NPC/daiwa_npc.gd" id="2_r4cm6"]
 [ext_resource type="Texture2D" uid="uid://bdxv87to075ml" path="res://Assets/UI/interact-ui.png" id="3_up404"]
+[ext_resource type="AudioStream" uid="uid://cff2wdy3ves4c" path="res://Assets/Audio/Voice/daiwa-hmph.wav" id="4_468ky"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0b6r"]
 atlas = ExtResource("1_up404")
@@ -277,6 +278,10 @@ shape = SubResource("RectangleShape2D_468ky")
 [node name="AnimationCooldownTimer" type="Timer" parent="."]
 
 [node name="AnimationBlinkTimer" type="Timer" parent="."]
+
+[node name="DaiwaVoicePlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_468ky")
+bus = &"Voice"
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
 [connection signal="body_entered" from="DaiwaArea" to="." method="_on_body_entered"]

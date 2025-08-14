@@ -5,6 +5,7 @@ extends AnimatedSprite2D
 @onready var interact_key_ui: AnimatedSprite2D = $Interact_Key_UI
 @onready var animation_cooldown_timer: Timer = $AnimationCooldownTimer
 @onready var animation_blink_timer: Timer = $AnimationBlinkTimer
+@onready var daiwa_voice_player: AudioStreamPlayer = $DaiwaVoicePlayer
 
 #For dialogue handling
 var can_interact = true
@@ -52,6 +53,10 @@ func _process(_delta: float) -> void:
 		play("blink")
 		animation_blink_timer.start()
 		can_blink = false
+		
+#Misc functions -------------------------------------------------------------------
+func play_voice() -> void:
+	daiwa_voice_player.play()
 
 #Signal stuff -------------------------------------------------------------------------------
 func _on_body_entered(_body: Node2D) -> void:

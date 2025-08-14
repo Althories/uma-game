@@ -13,7 +13,7 @@ DIALOGUE TODO
 -
 
 SCRIPT TODO
--
+- Transition to another scene by hitting a scene transition
 
 notes:
 	32x32 asset size basis

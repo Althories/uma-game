@@ -1,5 +1,6 @@
 ~ start
 do play("greet")
+do play_voice()
 Daiwa Scarlet: Vodka! Where have you been? [#Portrait=TestPortrait,Voice=beep]
 Vodka: Oh, Scarlet. I've been... Uh...	[#Voice=beep]
 - I've been going on midnight runs!
@@ -8,11 +9,13 @@ Vodka: Oh, Scarlet. I've been... Uh...	[#Voice=beep]
 	Daiwa Scarlet: Yeah, fat chance! You'd fall asleep in minutes!
 Daiwa Scarlet: Anyways, you're late for our set! Go find your trainer so we can get started.
 Vodka: Fiiine. Wait,[wait=.4] "our"[wait=.3] training?
+do play_voice()
 Daiwa Scarlet: Hmph! Maybe if you got more sleep, you'd remember we agreed to partner up today.
 Vodka: Crap. You're right.
 Daiwa Scarlet: Yup! Now stop talking and start moving!
 => END
 
 ~ loop
+do play_voice()
 Daiwa Scarlet: Didn't I already tell you? Go find your trainer so we can get started!
 => END
