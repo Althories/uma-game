@@ -6,11 +6,11 @@ VISUAL TODO
 1. Make basic Vodka Portrait
 2. Make basic Daiwa Portrait
 1. Animate Vodka walk (scary)
-1. Add a background bush and a background streetlight (aseprite)
+1. Give vodka an idle blink
+1. Add a background streetlight (aseprite)
 
 DIALOGUE TODO
-- Make Daiwa do a greet animation in the dialogue script to prove its capabilities
-(maybe just like a short yellow exclamation mark above her head)
+-
 
 SCRIPT TODO
 -
@@ -18,7 +18,11 @@ SCRIPT TODO
 notes:
 	32x32 asset size basis
 	tile order:
-		2. Player
-		1. NPC
-		0. Background
+		5. In front of player
+		4. Player
+		3. NPCs
+		2. Tileset Foreground
+		1. Background Sprites
+		0. Tileset Background
 	You can check uma relationships here https://umamusu.wiki/Vodka (relationships section for every char)
+	Voice extractor: https://github.com/chinosk6/umamusume-voice-text-extractor

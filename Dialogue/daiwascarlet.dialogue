@@ -1,5 +1,5 @@
 ~ start
-do! play("greet")
+do play("greet")
 Daiwa Scarlet: Vodka! Where have you been? [#Portrait=TestPortrait,Voice=beep]
 Vodka: Oh, Scarlet. I've been... Uh...	[#Voice=beep]
 - I've been going on midnight runs!
@@ -10,7 +10,7 @@ Daiwa Scarlet: Anyways, you're late for our set! Go find your trainer so we can 
 Vodka: Fiiine. Wait,[wait=.4] "our"[wait=.3] training?
 Daiwa Scarlet: Hmph! Maybe if you got more sleep, you'd remember we agreed to partner up today.
 Vodka: Crap. You're right.
-Daiwa Scarlet: YUP! Now stop talking and start moving!!
+Daiwa Scarlet: Yup! Now stop talking and start moving!
 => END
 
 ~ loop
