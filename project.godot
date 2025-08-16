@@ -38,6 +38,31 @@ window/stretch/scale_mode="integer"
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "red",
+"res://Assets/Audio/": "pink",
+"res://Assets/Audio/Buses/": "purple",
+"res://Assets/Audio/Music/": "blue",
+"res://Assets/Audio/SFX/": "teal",
+"res://Assets/Audio/Voice/": "green",
+"res://Assets/Characters/": "purple",
+"res://Assets/Characters/CharPortraits/": "blue",
+"res://Assets/Characters/CharSprites/": "teal",
+"res://Assets/Environment/": "blue",
+"res://Assets/Tiles/": "teal",
+"res://Assets/UI/": "green",
+"res://Dialogue/": "orange",
+"res://Scenes/": "yellow",
+"res://Scenes/Character/": "green",
+"res://Scenes/Environment/": "teal",
+"res://Scenes/Levels/": "blue",
+"res://Scenes/UI/": "purple",
+"res://Scripts/": "green",
+"res://addons/": "gray"
+}
+
 [input]
 
 ui_accept={

@@ -1,18 +1,16 @@
 VISUAL TODO
 1. Replace placeholder music with uma music
+1. Animate Vodka walk (scary)
 1. Make basic mayano sprite
 1. make basic mayano portrait
-1. Make basic Vodka Portrait
-2. Make basic Daiwa Portrait
-1. Animate Vodka walk (scary)
-1. Give vodka an idle blink
 1. Add a background streetlight (aseprite)
+
 
 DIALOGUE TODO
 -
 
 SCRIPT TODO
-- Transition to another scene by hitting a scene transition
+1. Transition to another scene by hitting a scene transition
 
 notes:
 	32x32 asset size basis

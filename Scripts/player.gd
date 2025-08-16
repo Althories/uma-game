@@ -17,7 +17,7 @@ func _process(_delta: float) -> void:
 		if Input.is_action_pressed("move_right"):
 			player_sprite.flip_h = false
 			
-	#animation
+	#Animation Block
 	if can_blink:
 		player_sprite.play("blink")
 		animation_blink_timer.start()

@@ -118,7 +118,7 @@ func apply_dialogue_line() -> void:
 	if ResourceLoader.exists(portrait_path):
 		portrait.texture = load(portrait_path)
 	else:
-		portrait.texture = null
+		portrait.texture = load("res://Assets/Characters/CharPortraits/TestPortrait.png")
 		
 	#look for character voice
 	var voice_path: String = "res://Assets/Audio/SFX/%s.wav" % dialogue_line.get_tag_value("Voice")
